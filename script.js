@@ -17,7 +17,6 @@ function refreshPage() {
    window.location.reload();
 }
 
-
 function computerPlay() {
    const choices = ['rock', 'paper', 'scissors'];
    const idx = Math.floor(Math.random() * choices.length);
@@ -63,21 +62,24 @@ function draw(playerSelection, computerSelection) {
 }
 
 function playRound(playerSelection) {
+   roundsPlayed++;
    const computerSelection = computerPlay();
-   if (
-      (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') ||
-      (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') ||
-      (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper')
-   ) {
-      won(playerSelection, computerSelection);
-   } else if (
-      (computerSelection == 'rock' && playerSelection.toLowerCase() == 'scissors') ||
-      (computerSelection == 'paper' && playerSelection.toLowerCase() == 'rock') ||
-      (computerSelection == 'scissors' && playerSelection.toLowerCase() == 'paper')
-   ){
-      lost(playerSelection, computerSelection);
-   } else if (computerSelection === playerSelection.toLowerCase()) {
-      draw(playerSelection, computerSelection);
+   if (roundsPlayed <= 5) {
+      if (
+         (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') ||
+         (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') ||
+         (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper')
+      ) {
+         won(playerSelection, computerSelection);
+      } else if (
+         (computerSelection == 'rock' && playerSelection.toLowerCase() == 'scissors') ||
+         (computerSelection == 'paper' && playerSelection.toLowerCase() == 'rock') ||
+         (computerSelection == 'scissors' && playerSelection.toLowerCase() == 'paper')
+      ){
+         lost(playerSelection, computerSelection);
+      } else if (computerSelection === playerSelection.toLowerCase()) {
+         draw(playerSelection, computerSelection);
+      }
    }
 }
 

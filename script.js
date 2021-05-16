@@ -81,6 +81,8 @@ function playRound(playerSelection) {
          draw(playerSelection, computerSelection);
       }
    }
+
+   game();
 }
 
 rockButton.addEventListener('click', () => {

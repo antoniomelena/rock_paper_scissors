@@ -1,3 +1,11 @@
+const userScore = document.querySelector('.user-score');
+const computerScore = document.querySelector('.computer-score');
+
+const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById('paper');
+const scissorsButton = document.getElementById('scissors');
+const resetButton = document.querySelector('.resetButton')
+
 let playerPoints = 0,
     computerPoints = 0,
     roundsPlayed = 0;

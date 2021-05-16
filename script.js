@@ -36,6 +36,16 @@ function game() {
    }
 }
 
+function won(playerSelection, computerSelection) {
+   playerPoints++;
+   userScore.textContent = `${playerPoints}`;
+   resultText.textContent = `You Win! :) ${playerSelection.toUpperCase()} Beats ${computerSelection.toUpperCase()}`;
+   document.getElementById(playerSelection).classList.add('blue-glow');
+   document.getElementById(computerSelection).classList.add('yellow-glow');
+   setTimeout(function () { document.getElementById(playerSelection).classList.remove('blue-glow') }, 500);
+   setTimeout(function () { document.getElementById(computerSelection).classList.remove('yellow-glow') }, 500);
+}
+
 function playRound(playerSelection) {
    const computerSelection = computerPlay();
    if (
@@ -43,9 +53,7 @@ function playRound(playerSelection) {
       (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') ||
       (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper')
    ) {
-      playerPoints += 1;
-      console.log(playerPoints, computerPoints);
-      console.log(`You Win! :) ${playerSelection.toUpperCase()} Beats ${computerSelection.toUpperCase()}`);
+      won(playerSelection, computerSelection);
    } else if (
       (computerSelection == 'rock' && playerSelection.toLowerCase() == 'scissors') ||
       (computerSelection == 'paper' && playerSelection.toLowerCase() == 'rock') ||

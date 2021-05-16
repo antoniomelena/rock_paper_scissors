@@ -1,3 +1,7 @@
+let playerPoints = 0,
+    computerPoints = 0,
+    roundsPlayed = 0;
+
 const computerSelection = computerPlay();
 
 function computerPlay() {
@@ -11,8 +15,6 @@ function computerPlay() {
 }
 
 function game() {
-      let playerPoints = 0;
-      let computerPoints = 0;
 
    function playRound(playerSelection, computerSelection) {
       if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') {

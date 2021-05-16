@@ -46,6 +46,16 @@ function won(playerSelection, computerSelection) {
    setTimeout(function () { document.getElementById(computerSelection).classList.remove('yellow-glow') }, 500);
 }
 
+function lost(playerSelection, computerSelection) {
+   computerPoints++;
+   computerScore.textContent = `${computerPoints}`;
+   resultText.textContent = `You Lose! :( ${playerSelection.toUpperCase()} Loses To ${computerSelection.toUpperCase()}`;
+   document.getElementById(playerSelection).classList.add('blue-glow');
+   document.getElementById(computerSelection).classList.add('yellow-glow');
+   setTimeout(function () { document.getElementById(playerSelection).classList.remove('blue-glow') }, 500);
+   setTimeout(function () { document.getElementById(computerSelection).classList.remove('yellow-glow') }, 500);
+}
+
 function playRound(playerSelection) {
    const computerSelection = computerPlay();
    if (
@@ -59,9 +69,7 @@ function playRound(playerSelection) {
       (computerSelection == 'paper' && playerSelection.toLowerCase() == 'rock') ||
       (computerSelection == 'scissors' && playerSelection.toLowerCase() == 'paper')
    ){
-      computerPoints += 1;
-      console.log(playerPoints, computerPoints);
-      console.log(`You Lose! :( ${playerSelection.toUpperCase()} Loses To ${computerSelection.toUpperCase()}`);
+      lost(playerSelection, computerSelection);
    } else if (computerSelection === playerSelection.toLowerCase()) {
       console.log(playerPoints, computerPoints);
       console.log(`Draw! :| ${playerSelection.toUpperCase()} Equals ${computerSelection.toUpperCase()}`);

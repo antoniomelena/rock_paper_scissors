@@ -81,3 +81,18 @@ body {
    font-size: 30px;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.green-glow {
+   border: 4px solid rgb(139, 226, 127);
+   box-shadow: 0 0 15px rgb(136, 214, 125);
+}
+
+.blue-glow {
+   border: 4px solid rgb(45, 106, 197);
+   box-shadow: 0 0 15px rgb(81, 92, 209);
+}
+
+.yellow-glow {
+   border: 4px solid #ffb900;
+   box-shadow: 0 0 15px #f3d276;
+}

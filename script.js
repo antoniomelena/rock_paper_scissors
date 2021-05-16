@@ -59,5 +59,14 @@ function playRound(playerSelection, computerSelection) {
    }
 }
 
+rockButton.addEventListener('click', () => {
+   playRound('rock');
+});
+paperButton.addEventListener('click', () => {
+   playRound('paper');
+});
+scissorsButton.addEventListener('click', () => {
+   playRound('scissors');
+});
 
-
+resetButton.addEventListener('click', refreshPage);

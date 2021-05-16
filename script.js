@@ -13,6 +13,10 @@ let playerPoints = 0,
     computerPoints = 0,
     roundsPlayed = 0;
 
+function refreshPage() {
+   window.location.reload();
+}
+
 const computerSelection = computerPlay();
 
 function computerPlay() {

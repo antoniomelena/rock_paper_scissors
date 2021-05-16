@@ -25,17 +25,14 @@ function computerPlay() {
 }
 
 function game() {
-   for (i = 0; i < 5; i++) {
-      const playerSelection = prompt('Rock, paper, or scissors?');
-      round = playRound(playerSelection, computerSelection);
-   }
-   
-   if (playerPoints > computerPoints) {
-      return ('You win!')
-   } else if (playerPoints < computerPoints) {
-      return ('You Lose!')
-   } else if (playerPoints === computerPoints) {
-      return ('Tie!')
+   if (roundsPlayed === 5) {
+      if (playerPoints > computerPoints) {
+         winnerText.textContent = 'You Won!';
+      } else if (playerPoints < computerPoints) {
+         winnerText.textContent = 'You Lost!';
+      } else if (playerPoints === computerPoints) {
+         winnerText.textContent = 'Tie!';
+      }
    }
 }
 

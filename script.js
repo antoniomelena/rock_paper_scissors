@@ -56,6 +56,12 @@ function lost(playerSelection, computerSelection) {
    setTimeout(function () { document.getElementById(computerSelection).classList.remove('yellow-glow') }, 500);
 }
 
+function draw(playerSelection, computerSelection) {
+   resultText.textContent = `Draw! :| ${playerSelection.toUpperCase()} Equals ${computerSelection.toUpperCase()}`;
+   document.getElementById(playerSelection).classList.add('green-glow');
+   setTimeout(function () { document.getElementById(playerSelection).classList.remove('green-glow') }, 500);
+}
+
 function playRound(playerSelection) {
    const computerSelection = computerPlay();
    if (
@@ -71,8 +77,7 @@ function playRound(playerSelection) {
    ){
       lost(playerSelection, computerSelection);
    } else if (computerSelection === playerSelection.toLowerCase()) {
-      console.log(playerPoints, computerPoints);
-      console.log(`Draw! :| ${playerSelection.toUpperCase()} Equals ${computerSelection.toUpperCase()}`);
+      draw(playerSelection, computerSelection);
    }
 }
 

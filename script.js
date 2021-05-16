@@ -1,3 +1,6 @@
+const resultText = document.querySelector(".resultText")
+const winnerText = document.querySelector(".winnerText")
+
 const userScore = document.querySelector('.user-score');
 const computerScore = document.querySelector('.computer-score');
 

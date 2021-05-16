@@ -17,7 +17,6 @@ function refreshPage() {
    window.location.reload();
 }
 
-const computerSelection = computerPlay();
 
 function computerPlay() {
    const choices = ['rock', 'paper', 'scissors'];
@@ -40,7 +39,8 @@ function game() {
    }
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
+   const computerSelection = computerPlay();
    if (
       (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') ||
       (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') ||
